@@ -91,6 +91,16 @@ else:    print("Senha incorreta!")
 # coleções odeio affffffffff
 
 frutas = ['banana', 'maçã', 'uva']
+frutas[2] = ['ixi'] # o número entre colchetes é a posição do objeto que vai ser substituido, ou seja, nesse caso a uva vai ser substituida por ixi, ou seja, a uva vai ser apagada e no lugar dela vai aparecer ixi
 frutas[0:1] = ['oier','laelezinho']
+frutas[1] = ['borabill']
+frutas.append('maça') # nao da para colocar 2 objetos append pois ele só aceita um objeto, ou seja, se quiser colocar mais de um objeto tem que colocar uma lista dentro do append, droga
+frutas.append('aura')
+frutas.append('teste')
+frutas.remove('teste')
+frutas.remove('aura')
+frutas.remove('oier')
+frutas.insert(1, 'laranja') # o insert é para colocar um objeto em uma posição específica, ou seja, o primeiro número é a posição e o segundo número é o objeto que vai ser colocado nessa posição, ou seja, nesse caso a laranja vai ser colocada na posição 1, ou seja, entre a maçã e a uva
 
 print(frutas)
+
