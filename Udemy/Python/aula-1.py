@@ -601,6 +601,149 @@ print(frutas)
 # ffrutas é diferente de frutas.
 # O Python diferencia nomes escritos de forma diferente.
 
+# Loops, listas, funções e bibliotecas
 
-# Fim das anotações da aula 01
+## Nesta parte, vamos ver exemplos de uso de loops, funções e bibliotecas. ##
+
+# 1. Sistema de senha com while
+
+senha_certa = 'receba123'
+senha_colocada = ''
+
+# Como quero que o usuário digite a senha várias vezes,
+# começo deixando a variável senha_colocada vazia.
+tentativas = 0
+tentativas_maximas = 3
+
+while senha_colocada != senha_certa:
+    senha_colocada = input('Digite sua senha: ')
+
+    if senha_colocada != senha_certa:
+        print('Senha incorreta! Tente novamente.')
+        tentativas += 1
+
+    if tentativas >= tentativas_maximas:
+        print('Número máximo de tentativas atingido. Acesso negado.')
+        break
+else:
+    print('Senha correta!')
+
+
+# 2. Percorrendo uma lista com for
+
+compras = ['feijão', 'arroz', 'macarrão']
+
+for item in compras:
+    print(f'Você precisa comprar {item}')
+
+
+# 3. Usando continue para pular números pares
+
+numeros = [1, 6, 5, 4, 2, 5, 67, 7, 78, 5, 3, 3, 6]
+
+for numero in numeros:
+    if numero % 2 == 0:
+        # Se o número for par, o continue pula para a próxima repetição.
+        # Ou seja, o print(numero) abaixo não será executado para números pares.
+        #
+        # Se fosse break, o loop pararia completamente no primeiro número par.
+        continue
+
+    print(numero)
+
+
+# 4. Funções
+
+# Função simples sem parâmetro
+def ola():
+    print('Olá, Mundo')
+
+
+ola()
+
+
+# Função com parâmetro
+def saudacao(nome):
+    print(f'Olá, {nome}!')
+
+
+saudacao('Casca de bala')
+
+
+# Usando input junto com função
+nome_inserido = input('Digite seu nome: ')
+saudacao(nome_inserido)
+
+
+# Função para somar dois números e mostrar o resultado
+def somar(n1, n2):
+    resultado = n1 + n2
+    print(f'A soma de {n1} + {n2} é {resultado}')
+
+
+n1 = int(input('Digite o primeiro número: '))
+n2 = int(input('Digite o segundo número: '))
+
+somar(n1, n2)
+
+
+# Outra função de soma, usando valores fixos
+def somar_v2(n3, n4):
+    resultado = n3 + n4
+    print(f'A soma de {n3} + {n4} é {resultado}')
+
+
+somar_v2(5, 7)
+
+
+# Função com return
+def somando(numero_um, numero_dois):
+    resultado = numero_um + numero_dois
+    return resultado
+
+
+resultado_da_soma = somando(5, 6)
+
+print(f'O resultado da soma é {resultado_da_soma}')
+
+
+# 5. Importando função de outro arquivo
+
+# Para isso funcionar, precisa existir um arquivo chamado funcoes.py
+# na mesma pasta deste arquivo.
+#
+# Dentro de funcoes.py precisa existir uma função chamada dandoola.
+#
+# Exemplo do arquivo funcoes.py:
+#
+# def dandoola(nome):
+#     print(f'Olá, {nome}!')
+
+from funcoes import dandoola
+
+dandoola('Lain')
+
+
+# 6. Biblioteca time
+
+import time
+
+print('Aguarde...')
+time.sleep(4)
+print('Pronto!')
+
+
+# 7. Biblioteca random
+
+import random
+
+while True:
+    numero_aleatorio = random.randint(1, 50)
+    print(f'O número aleatório é: {numero_aleatorio}')
+
+    time.sleep(2)
+
+    if numero_aleatorio % 2 == 0:
+        print('Número par encontrado! Encerrando o programa.')
+        break
 
